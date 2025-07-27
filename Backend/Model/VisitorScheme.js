@@ -6,6 +6,9 @@ const visitorSchema = new mongoose.Schema({
     country: String,
     region: String,
     city: String,
+     isp: String,
+    lat: Number,
+    lon: Number,
   },
   date: {
     type: Date,
