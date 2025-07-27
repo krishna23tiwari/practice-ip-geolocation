@@ -22,4 +22,4 @@ const counterSchema = new mongoose.Schema({
   ],
 }, { timestamps: true, versionKey: false });
 
-module.exports = mongoose.model("Counter", counterSchema);
+module.exports = mongoose.model("Counter-Visitors", counterSchema);
