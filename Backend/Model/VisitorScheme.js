@@ -10,6 +10,12 @@ const visitorSchema = new mongoose.Schema({
     lat: Number,
     lon: Number,
   },
+
+    deviceInfo: {
+    os: String,
+    device: String,
+    browser: String,
+  },
   date: {
     type: Date,
     default: Date.now,
