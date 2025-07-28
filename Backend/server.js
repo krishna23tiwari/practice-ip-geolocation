@@ -7,7 +7,7 @@ const cors =  require('cors')
 app.use(express.json())
 app.use(cors())
 
-const monogurl = "mongodb+srv://krishna23tiwarikt:krishna23@cluster0.qsevc9h.mongodb.net/"
+const monogurl = "mongodb+srv://krishna23tiwarikt:krishna23@cluster0.qsevc9h.mongodb.net/test-ip-location"
 
 mongoose.connect(monogurl)
 .then(() => console.log("connected"))
