@@ -154,3 +154,20 @@ exports.trackVisitor = async (req, res) => {
     res.status(500).json({ error: "Failed to track visitor" });
   }
 };
+
+
+exports.test = async(req, res) => {
+    try {
+    const doc = await Counter.create({
+      date: "2025-07-24",
+      todayCount: 1,
+      totalCount: 1,
+      uniqueVisitors: [{ ip: "1.1.1.1", deviceHash: "abcd1234" }],
+    });
+
+    res.status(201).json({ message: "Created", doc });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Failed to create" });
+  }
+}
