@@ -4,7 +4,7 @@ const counterSchema = new mongoose.Schema({
   date: {
     type: String, 
     required: true,
-    unique: true,
+    // unique: true,
   },
   todayCount: {
     type: Number,
@@ -17,9 +17,9 @@ const counterSchema = new mongoose.Schema({
   uniqueVisitors: [
     {
       ip: String,
-      deviceHash: String, 
+      deviceHash: String, // hashed device info to check uniqueness
     },
   ],
 }, { timestamps: true, versionKey: false });
 
-module.exports = mongoose.model("CounterVisitors", counterSchema);
+module.exports = mongoose.model("todayAndTotalCount", counterSchema);
