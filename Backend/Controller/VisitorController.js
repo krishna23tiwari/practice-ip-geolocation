@@ -171,3 +171,22 @@ exports.test = async(req, res) => {
     res.status(500).json({ message: "Failed to create" });
   }
 }
+
+exports.getCounts = async (req, res) => {
+  try {
+    const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    const record = await Counter.findOne({ date: today });
+
+    if (!record) {
+      return res.status(200).json({ todayCount: 0, totalCount: 0 });
+    }
+
+    return res.status(200).json({
+      todayCount: record.todayCount,
+      totalCount: record.totalCount,
+    });
+  } catch (error) {
+    console.error("Failed to fetch counts:", error);
+    res.status(500).json({ message: "Failed to fetch counts" });
+  }
+};

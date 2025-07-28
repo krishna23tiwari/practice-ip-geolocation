@@ -6,4 +6,6 @@ router.post('/track', Visitor.trackVisitor)
 
 router.get('/test', Visitor.test)
 
+router.get('/counts', Visitor.getCounts);
+
 module.exports = router
